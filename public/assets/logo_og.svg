@@ -1,0 +1,49 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="og-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="50%" stop-color="#F4E9D5" />
+      <stop offset="100%" stop-color="#B28A4A" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Arch -->
+  <path d="M17 44 C17 24 32 16 43 14" stroke="url(#og-gold)" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M57 14 C68 16 83 24 83 44" stroke="url(#og-gold)" stroke-width="1.8" stroke-linecap="round" />
+  
+  <!-- Inner Arch -->
+  <path d="M22 44 C22 28 34 20 44 19" stroke="url(#og-gold)" stroke-width="1.4" stroke-linecap="round" />
+  <path d="M56 19 C66 20 78 28 78 44" stroke="url(#og-gold)" stroke-width="1.4" stroke-linecap="round" />
+
+  <!-- Left/Right Pillars -->
+  <path d="M14 44 H25 M14 77 H25" stroke="url(#og-gold)" stroke-width="2.2" stroke-linecap="round" />
+  <path d="M18 45 V77 M21 45 V77" stroke="url(#og-gold)" stroke-width="1.2" />
+  
+  <path d="M75 44 H86 M75 77 H86" stroke="url(#og-gold)" stroke-width="2.2" stroke-linecap="round" />
+  <path d="M79 45 V77 M82 45 V77" stroke="url(#og-gold)" stroke-width="1.2" />
+
+  <!-- Foliage -->
+  <g stroke="url(#og-gold)" stroke-width="1.1" fill="none">
+    <path d="M16 75 C10 70 8 63 10 59 C13 64 16 69 17 73" />
+    <path d="M12 65 C7 62 6 56 8 53 C10 57 12 61 14 64" />
+    <path d="M14 71 C9 70 6 67 6 64 C9 66 12 68 15 70" />
+    <path d="M15 76 C10 76 7 74 7 71 C10 72 13 74 16 75" />
+    <path d="M84 75 C90 70 92 63 90 59 C87 64 84 69 83 73" />
+    <path d="M88 65 C93 62 94 56 92 53 C90 57 88 61 86 64" />
+    <path d="M86 71 C91 70 94 67 94 64 C91 66 88 68 85 70" />
+    <path d="M85 76 C90 76 93 74 93 71 C90 72 87 74 84 75" />
+  </g>
+
+  <!-- Saucer & Cup -->
+  <ellipse cx="50" cy="77" rx="20" ry="2.5" stroke="url(#og-gold)" stroke-width="1.6" fill="none" />
+  <path d="M32 59 C32 72 40 76 50 76 C60 76 68 72 68 59 Z" stroke="url(#og-gold)" stroke-width="1.6" fill="none" />
+  <path d="M36 61 C42 63 58 63 64 61" stroke="url(#og-gold)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+  <path d="M67 61 C73 61 74 67 69 71 C66 73 63 71 63 71" stroke="url(#og-gold)" stroke-width="1.6" stroke-linecap="round" fill="none" />
+
+  <!-- Steam "6" -->
+  <path d="M48 24 C45 28 43 35 44 42 C44 45 42 49 40 53 C38 57 41 62 46 63 C52 64 57 61 58 55 C59 49 53 45 46 46 C41 47 38 52 40 56 C41 58 44 59 47 58 C50 57 51 53 49 51 C47 49 44 51 44 53 C44 55 46 56 47 55 C48 54 48 53 47 52 C45 52 45 54 46 55 C43 55 42 50 46 48 C51 47 55 51 54 55 C53 59 48 61 44 59 C40 57 39 53 41 49 C43 45 47 38 47 33 C47 28 49 25 50 22 C49 23 48 23 48 24 Z" fill="url(#og-gold)" />
+  
+  <!-- Top Steam Wisps -->
+  <path d="M48 6 C46 9 46 14 49 18 C47 14 47 10 50 7 Z" fill="url(#og-gold)" />
+  <path d="M52 8 C50 12 50 17 53 20 C51 16 51 12 54 9 Z" fill="url(#og-gold)" />
+</svg>
