@@ -122,7 +122,7 @@ html, body {
 .app-container {
   width: 393px;
   height: 852px;
-  max-height: calc(100vh - 80px);
+  max-height: calc(100vh - 90px);
   background: var(--c-forest-dark);
   border-radius: 50px;
   box-shadow: 0 0 0 10px #1e3314, 0 0 0 12px #2f4e20, 0 35px 80px rgba(0,0,0,0.85);
@@ -130,14 +130,22 @@ html, body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   transform-origin: center top;
 }
 
-@media (max-height: 880px) and (min-width: 769px) {
+@media (max-height: 960px) and (min-width: 769px) {
   .app-container:not(.full-view) {
-    transform: scale(0.88);
+    transform: scale(0.82);
     margin-top: -30px;
+    margin-bottom: -50px;
+  }
+}
+@media (max-height: 800px) and (min-width: 769px) {
+  .app-container:not(.full-view) {
+    transform: scale(0.74);
+    margin-top: -60px;
+    margin-bottom: -90px;
   }
 }
 
@@ -640,16 +648,20 @@ html, body {
 /* ─────────────────────────────────────────────
    SCREEN 2: ORDER / MENU
 ───────────────────────────────────────────── */
+.order-sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0E1A0B;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
 .order-header-bar {
-  background: rgba(19, 32, 13, 0.96);
-  border-bottom: 1px solid var(--c-gold-dim);
+  background: #0E1A0B;
+  border-bottom: 1px solid rgba(178, 138, 74, 0.15);
   padding: 10px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 .table-chip {
   display: flex;
@@ -715,8 +727,9 @@ html, body {
   gap: 8px;
   overflow-x: auto;
   scrollbar-width: none;
-  padding: 12px 16px;
-  background: var(--c-forest-dark);
+  padding: 8px 16px 10px;
+  background: #0E1A0B;
+  border-bottom: 1px solid var(--c-gold-dim);
 }
 .categories-bar::-webkit-scrollbar {
   display: none;
@@ -745,7 +758,7 @@ html, body {
 
 /* Dishes Grid (2-column responsive) */
 .dishes-container {
-  padding: 0 16px 80px;
+  padding: 12px 16px 80px;
 }
 .dishes-grid {
   display: grid;
@@ -2063,29 +2076,31 @@ html, body {
 
       <!-- ════════════ SCREEN 2: ORDER / MENU ════════════ -->
       <div class="screen" id="screen-order">
-        <div class="order-header-bar">
-          <div class="table-chip" onclick="openTablePicker()">
-            <div class="table-chip-dot"></div>
-            <div class="table-chip-title" id="activeTableLabel">Table 06 · Courtyard</div>
-            <span style="font-size: 10px; color: var(--c-gold);">▾</span>
+        <div class="order-sticky-top">
+          <div class="order-header-bar">
+            <div class="table-chip" onclick="openTablePicker()">
+              <div class="table-chip-dot"></div>
+              <div class="table-chip-title" id="activeTableLabel">Table 06 · Courtyard</div>
+              <span style="font-size: 10px; color: var(--c-gold);">▾</span>
+            </div>
+            <div class="order-bar-actions">
+              <button class="waiter-btn" onclick="openServiceModal()">
+                <span>🔔</span> Call Staff
+              </button>
+              <button class="cart-header-btn" onclick="openCartModal()">
+                <span>🛍</span> <span id="cartHeaderLabel">0 · ₹0</span>
+              </button>
+            </div>
           </div>
-          <div class="order-bar-actions">
-            <button class="waiter-btn" onclick="openServiceModal()">
-              <span>🔔</span> Call Staff
-            </button>
-            <button class="cart-header-btn" onclick="openCartModal()">
-              <span>🛍</span> <span id="cartHeaderLabel">0 · ₹0</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- Menu Category Horizontal Tabs -->
-        <div class="categories-bar" id="categoriesBar">
-          <div class="cat-pill active" onclick="switchCategory('recommended', this)">✨ Chef Picks</div>
-          <div class="cat-pill" onclick="switchCategory('starters', this)">🥗 Starters</div>
-          <div class="cat-pill" onclick="switchCategory('mains', this)">🍽 Main Course</div>
-          <div class="cat-pill" onclick="switchCategory('beverages', this)">☕ Beverages</div>
-          <div class="cat-pill" onclick="switchCategory('desserts', this)">🍰 Desserts</div>
+          <!-- Menu Category Horizontal Tabs -->
+          <div class="categories-bar" id="categoriesBar">
+            <div class="cat-pill active" onclick="switchCategory('recommended', this)">✨ Chef Picks</div>
+            <div class="cat-pill" onclick="switchCategory('starters', this)">🥗 Starters</div>
+            <div class="cat-pill" onclick="switchCategory('mains', this)">🍽 Main Course</div>
+            <div class="cat-pill" onclick="switchCategory('beverages', this)">☕ Beverages</div>
+            <div class="cat-pill" onclick="switchCategory('desserts', this)">🍰 Desserts</div>
+          </div>
         </div>
 
         <!-- Dishes Grid Area -->
