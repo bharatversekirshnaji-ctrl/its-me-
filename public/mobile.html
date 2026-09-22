@@ -1600,6 +1600,275 @@ html, body {
   font-style: italic;
 }
 
+/* ─────────────────────────────────────────────
+   APPLE iOS FLOATING CART BOTTOM BAR
+───────────────────────────────────────────── */
+.apple-floating-bar {
+  position: absolute;
+  bottom: 84px;
+  left: 14px;
+  right: 14px;
+  background: linear-gradient(135deg, rgba(28, 46, 20, 0.95) 0%, rgba(14, 24, 10, 0.98) 100%);
+  border: 1px solid var(--c-gold);
+  border-radius: 18px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 350;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px rgba(178, 138, 74, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
+  transform: translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.apple-floating-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.apple-floating-bar:active {
+  transform: scale(0.97);
+}
+.afb-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.afb-badge {
+  background: var(--c-gold);
+  color: #0A1307;
+  font-size: 12px;
+  font-weight: 800;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.afb-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--c-cream);
+  line-height: 1.1;
+}
+.afb-sub {
+  font-size: 10px;
+  color: var(--c-cream-dim);
+}
+.afb-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.afb-price {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--c-gold-light);
+}
+.afb-arrow {
+  color: var(--c-gold);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────
+   APPLE iOS POPUP FOOD DETAIL SHEET
+───────────────────────────────────────────── */
+.dish-detail-sheet {
+  width: 100%;
+  max-height: 92%;
+  background: #111D0D;
+  border-top: 1px solid var(--c-gold);
+  border-radius: 28px 28px 0 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: appleSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes appleSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.dish-sheet-hero {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #081005;
+}
+.dish-sheet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dish-sheet-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.dish-sheet-body {
+  padding: 18px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+.dish-sheet-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.dish-sheet-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--c-cream);
+  line-height: 1.15;
+}
+.dish-sheet-price {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--c-gold-light);
+}
+.dish-sheet-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.dish-sheet-pill {
+  background: rgba(178, 138, 74, 0.15);
+  border: 1px solid var(--c-gold-dim);
+  color: var(--c-gold);
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+.dish-sheet-desc {
+  font-size: 12px;
+  color: var(--c-cream-dim);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Apple Customization Section */
+.custom-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-gold);
+  margin-bottom: 8px;
+}
+.spice-pills-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.spice-pill {
+  background: rgba(24, 42, 16, 0.7);
+  border: 1px solid var(--c-gold-dim);
+  border-radius: 10px;
+  padding: 8px 4px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c-cream-dim);
+  cursor: pointer;
+}
+.spice-pill.active {
+  background: var(--c-gold);
+  color: #0A1307;
+  font-weight: 700;
+}
+.dish-sheet-footer {
+  padding: 14px 20px;
+  background: rgba(10, 19, 7, 0.95);
+  border-top: 1px solid var(--c-gold-dim);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.apple-stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(24, 42, 16, 0.9);
+  border: 1px solid var(--c-gold);
+  border-radius: 12px;
+  padding: 6px 10px;
+}
+.apple-stepper-btn {
+  background: none;
+  border: none;
+  color: var(--c-cream);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.apple-stepper-val {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--c-gold-light);
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Dynamic Island Expanded State */
+.notch-island.island-expanded {
+  width: 280px !important;
+  height: 38px !important;
+  background: rgba(10, 19, 7, 0.95) !important;
+  border: 1px solid var(--c-gold) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 14px rgba(178, 138, 74, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.island-notice {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--c-cream);
+}
+.notch-island.island-expanded .island-notice {
+  display: flex;
+}
+.notch-island.island-expanded .notch-camera,
+.notch-island.island-expanded .notch-lens {
+  display: none;
+}
+
 /* Global Toast Notification */
 .global-toast {
   position: absolute;
@@ -1651,9 +1920,13 @@ html, body {
   <div class="app-container" id="appPhone">
 
     <!-- Notch / Dynamic Island -->
-    <div class="notch-island">
+    <div class="notch-island" id="dynamicIsland">
       <div class="notch-camera"></div>
       <div class="notch-lens"></div>
+      <div class="island-notice" id="islandNotice">
+        <span id="islandNoticeIcon">✨</span>
+        <span id="islandNoticeText">Table 06 Active</span>
+      </div>
     </div>
 
     <!-- Mobile Status Bar -->
@@ -2055,6 +2328,21 @@ html, body {
 
     </div><!-- /screens-viewport -->
 
+    <!-- APPLE iOS FLOATING ORDER BAR -->
+    <div class="apple-floating-bar" id="appleFloatingBar" onclick="openCartModal()">
+      <div class="afb-left">
+        <div class="afb-badge" id="afbCount">0</div>
+        <div>
+          <div class="afb-title">View Table Order</div>
+          <div class="afb-sub">Table 06 • Jeep Courtyard</div>
+        </div>
+      </div>
+      <div class="afb-right">
+        <div class="afb-price" id="afbPrice">₹0</div>
+        <div class="afb-arrow">›</div>
+      </div>
+    </div>
+
     <!-- BOTTOM TAB NAVIGATION -->
     <div class="bottom-nav">
       <div class="nav-tab active" id="tab-home" onclick="navigateTo('home')">
@@ -2181,6 +2469,48 @@ html, body {
               Back to Menu
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL 4: APPLE iOS DISH DETAIL POPUP SHEET -->
+    <div class="modal-overlay" id="dishDetailModal">
+      <div class="dish-detail-sheet">
+        <div class="dish-sheet-hero">
+          <img class="dish-sheet-img" id="detailDishImg" src="" alt="Dish"/>
+          <button class="dish-sheet-close" onclick="closeDishDetail()">✕</button>
+        </div>
+        <div class="dish-sheet-body">
+          <div class="dish-sheet-header">
+            <div class="dish-sheet-title" id="detailDishTitle">Truffle Pasta</div>
+            <div class="dish-sheet-price" id="detailDishPrice">₹399</div>
+          </div>
+          <div class="dish-sheet-meta">
+            <span class="dish-sheet-pill" id="detailDishDiet">🌿 100% Veg</span>
+            <span class="dish-sheet-pill" id="detailDishTime">⏱ 15 mins</span>
+            <span class="dish-sheet-pill" id="detailDishSpecial" style="display:none; background:var(--c-gold); color:#0A1307;">⭐ Chef Special</span>
+          </div>
+          <p class="dish-sheet-desc" id="detailDishDesc">Fettuccine with aromatic black truffle cream, aged parmesan & Italian herbs.</p>
+
+          <div class="custom-section-title">Spice Preference</div>
+          <div class="spice-pills-row">
+            <div class="spice-pill active" onclick="selectSpicePill(this, 'Mild')">Mild</div>
+            <div class="spice-pill" onclick="selectSpicePill(this, 'Medium')">Medium 🌶</div>
+            <div class="spice-pill" onclick="selectSpicePill(this, 'Spicy')">Spicy 🌶🌶</div>
+          </div>
+
+          <div class="custom-section-title">Special Cooking Request</div>
+          <input class="res-input" id="detailDishNote" placeholder="e.g. Extra parmesan, dressing on side..." style="margin-bottom:16px;"/>
+        </div>
+        <div class="dish-sheet-footer">
+          <div class="apple-stepper">
+            <button class="apple-stepper-btn" onclick="adjustDetailQty(-1)">−</button>
+            <span class="apple-stepper-val" id="detailQtyDisplay">1</span>
+            <button class="apple-stepper-btn" onclick="adjustDetailQty(1)">+</button>
+          </div>
+          <button class="btn-primary" style="flex:1; padding:14px;" onclick="addDetailToCart()">
+            Add to Order • <span id="detailBtnTotal">₹399</span>
+          </button>
         </div>
       </div>
     </div>
@@ -2339,7 +2669,7 @@ function renderDishes() {
   const list = MENU_DATA[currentCategory] || [];
   
   container.innerHTML = list.map(item => `
-    <div class="food-card" onclick="quickAddDish('${item.id}')">
+    <div class="food-card" onclick="openDishDetail('${item.id}')">
       <div class="food-card-img-wrap">
         <img class="food-card-img" src="${item.img}" alt="${item.name}" loading="lazy"/>
         <span class="veg-tag">🌿 Veg</span>
@@ -2356,6 +2686,97 @@ function renderDishes() {
       </div>
     </div>
   `).join('');
+}
+
+// ═══════════════════════════════════════════════════
+// APPLE iOS DISH DETAIL POPUP LOGIC
+// ═══════════════════════════════════════════════════
+let currentDetailDish = null;
+let currentDetailQty = 1;
+let currentDetailSpice = 'Mild';
+
+function openDishDetail(dishId) {
+  playSound('tap');
+  const dish = findDishById(dishId);
+  if (!dish) return;
+  currentDetailDish = dish;
+  currentDetailQty = 1;
+  currentDetailSpice = 'Mild';
+
+  document.getElementById('detailDishImg').src = dish.img;
+  document.getElementById('detailDishTitle').textContent = dish.name;
+  document.getElementById('detailDishPrice').textContent = `₹${dish.price}`;
+  document.getElementById('detailDishDesc').textContent = dish.desc;
+  document.getElementById('detailDishTime').textContent = `⏱ ${dish.time}`;
+  
+  const specialBadge = document.getElementById('detailDishSpecial');
+  if (specialBadge) specialBadge.style.display = dish.special ? 'inline-block' : 'none';
+
+  document.getElementById('detailQtyDisplay').textContent = '1';
+  document.getElementById('detailBtnTotal').textContent = `₹${dish.price}`;
+  document.getElementById('detailDishNote').value = '';
+
+  // Reset spice pills
+  document.querySelectorAll('.spice-pill').forEach((p, idx) => p.classList.toggle('active', idx === 0));
+
+  document.getElementById('dishDetailModal').classList.add('open');
+}
+
+function closeDishDetail() {
+  document.getElementById('dishDetailModal').classList.remove('open');
+}
+
+function adjustDetailQty(delta) {
+  playSound('tap');
+  currentDetailQty = Math.max(1, Math.min(10, currentDetailQty + delta));
+  document.getElementById('detailQtyDisplay').textContent = currentDetailQty;
+  if (currentDetailDish) {
+    const total = currentDetailDish.price * currentDetailQty;
+    document.getElementById('detailBtnTotal').textContent = `₹${total}`;
+  }
+}
+
+function selectSpicePill(el, val) {
+  playSound('tap');
+  document.querySelectorAll('.spice-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  currentDetailSpice = val;
+}
+
+function addDetailToCart() {
+  if (!currentDetailDish) return;
+  const id = currentDetailDish.id;
+  if (cart[id]) {
+    cart[id].qty += currentDetailQty;
+  } else {
+    cart[id] = { dish: currentDetailDish, qty: currentDetailQty };
+  }
+  closeDishDetail();
+  playSound('tap');
+  if (navigator.vibrate) navigator.vibrate(10);
+  updateCartCounters();
+  showDynamicIslandNotice('🛍️', `${currentDetailDish.name} Added`);
+  showToast(`✓ Added ${currentDetailQty}x ${currentDetailDish.name} (${currentDetailSpice})`);
+}
+
+// ═══════════════════════════════════════════════════
+// DYNAMIC ISLAND LIVE NOTIFICATION (APPLE STYLE)
+// ═══════════════════════════════════════════════════
+let islandTimeout;
+function showDynamicIslandNotice(icon, text) {
+  const island = document.getElementById('dynamicIsland');
+  const icoEl = document.getElementById('islandNoticeIcon');
+  const txtEl = document.getElementById('islandNoticeText');
+  if (!island || !icoEl || !txtEl) return;
+
+  icoEl.textContent = icon;
+  txtEl.textContent = text;
+  island.classList.add('island-expanded');
+
+  clearTimeout(islandTimeout);
+  islandTimeout = setTimeout(() => {
+    island.classList.remove('island-expanded');
+  }, 2600);
 }
 
 // ═══════════════════════════════════════════════════
@@ -2381,6 +2802,7 @@ function quickAddDish(dishId) {
     cart[dishId] = { dish, qty: 1 };
   }
   updateCartCounters();
+  showDynamicIslandNotice('🛍️', `${dish.name} Added!`);
   showToast(`✓ Added ${dish.name} (₹${dish.price})`);
 }
 
@@ -2400,6 +2822,16 @@ function updateCartCounters() {
 
   const sheetTotal = document.getElementById('sheetTotalDisplay');
   if (sheetTotal) sheetTotal.textContent = `₹${gstTotal}`;
+
+  // Apple Floating Cart Bar
+  const floatingBar = document.getElementById('appleFloatingBar');
+  const afbCount = document.getElementById('afbCount');
+  const afbPrice = document.getElementById('afbPrice');
+  if (floatingBar) {
+    floatingBar.classList.toggle('visible', count > 0);
+    if (afbCount) afbCount.textContent = count;
+    if (afbPrice) afbPrice.textContent = `₹${gstTotal}`;
+  }
 }
 
 function openCartModal() {
@@ -2510,6 +2942,7 @@ function closeServiceModal() {
 function requestServiceItem(itemName) {
   closeServiceModal();
   playSound('bell');
+  showDynamicIslandNotice('🔔', `${itemName} Called`);
   showToast(`🔔 Requested: ${itemName}. Staff notified!`);
 }
 function openTablePicker() {
@@ -2518,6 +2951,7 @@ function openTablePicker() {
   const tables = ['Table 06 · Courtyard', 'Table 02 · Poolside', 'Table 11 · Library Lounge', 'Table 08 · Botanical Veranda'];
   const next = tables[(tables.indexOf(current.textContent) + 1) % tables.length];
   current.textContent = next;
+  showDynamicIslandNotice('📍', next);
   showToast(`📍 Switched to ${next}`);
 }
 
