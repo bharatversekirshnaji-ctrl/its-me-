@@ -122,7 +122,7 @@ html, body {
 .app-container {
   width: 393px;
   height: 852px;
-  max-height: calc(100vh - 70px);
+  max-height: calc(100vh - 80px);
   background: var(--c-forest-dark);
   border-radius: 50px;
   box-shadow: 0 0 0 10px #1e3314, 0 0 0 12px #2f4e20, 0 35px 80px rgba(0,0,0,0.85);
@@ -131,6 +131,14 @@ html, body {
   flex-direction: column;
   overflow: hidden;
   transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center top;
+}
+
+@media (max-height: 880px) and (min-width: 769px) {
+  .app-container:not(.full-view) {
+    transform: scale(0.88);
+    margin-top: -30px;
+  }
 }
 
 /* Full View Mode on Desktop */
@@ -378,22 +386,23 @@ html, body {
 ───────────────────────────────────────────── */
 .home-hero {
   position: relative;
-  min-height: 360px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 24px 20px;
-  background-image: linear-gradient(180deg, rgba(10,19,7,0.15) 0%, rgba(10,19,7,0.7) 60%, rgba(10,19,7,1) 100%),
-                    url('/assets/hero_ambience.jpg');
+  justify-content: flex-start;
+  padding: 22px 20px 22px;
+  background-image: linear-gradient(180deg, rgba(10,19,7,0.2) 0%, rgba(10,19,7,0.7) 45%, rgba(10,19,7,0.95) 100%),
+                    url('assets/hero_ambience.jpg');
   background-size: cover;
   background-position: center;
+  border-bottom: 1px solid var(--c-gold-dim);
 }
 .hero-tagline {
   font-family: var(--font-script);
   font-size: 32px;
   color: var(--c-gold-light);
-  line-height: 1;
-  margin-bottom: 4px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  margin-top: 4px;
 }
 .hero-name {
   font-family: var(--font-serif);
@@ -401,7 +410,7 @@ html, body {
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--c-cream);
-  line-height: 1.05;
+  line-height: 1.1;
   margin-bottom: 8px;
 }
 .hero-desc {
@@ -1681,7 +1690,7 @@ html, body {
           </div>
           <div class="cards-carousel">
             <div class="mini-dish-card" onclick="quickAddDish('truffle-pasta')">
-              <img class="mini-dish-img" src="https://images.unsplash.com/photo-1621996346565-e3d5d6281292?w=400&q=80" alt="Truffle Pasta"/>
+              <img class="mini-dish-img" src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80';" alt="Truffle Pasta"/>
               <div class="mini-dish-content">
                 <div class="mini-dish-badge">Signature</div>
                 <div class="mini-dish-name">Truffle Pasta</div>
@@ -2189,7 +2198,7 @@ html, body {
 // ═══════════════════════════════════════════════════
 const MENU_DATA = {
   recommended: [
-    {id:'truffle-pasta', name:'Truffle Pasta', price:399, time:'15 mins', veg:true, special:true, desc:'Fettuccine with aromatic black truffle cream, aged parmesan & Italian herbs.', img:'https://images.unsplash.com/photo-1621996346565-e3d5d6281292?w=400&q=80'},
+    {id:'truffle-pasta', name:'Truffle Pasta', price:399, time:'15 mins', veg:true, special:true, desc:'Fettuccine with aromatic black truffle cream, aged parmesan & Italian herbs.', img:'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'},
     {id:'burrata-pizza', name:'Burrata & Pesto Pizza', price:499, time:'18 mins', veg:true, special:true, desc:'Wood-fired sourdough with fresh burrata, Genovese pesto & San Marzano tomatoes.', img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80'},
     {id:'classic-burger', name:'Bungalow Brioche Burger', price:349, time:'15 mins', veg:true, special:false, desc:'Butter-toasted brioche, herbed vegetable patty, smoked cheddar & truffle aioli.', img:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80'},
     {id:'blue-lagoon', name:'Blue Lagoon Cooler', price:249, time:'5 mins', veg:true, special:true, desc:'Citrus blue elixir, kaffir lime, sparkling soda and mountain mint.', img:'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&q=80'},
@@ -2203,7 +2212,7 @@ const MENU_DATA = {
   ],
   mains: [
     {id:'mushroom-risotto', name:'Wild Porcini Risotto', price:469, time:'22 mins', veg:true, special:true, desc:'Carnaroli rice slow-simmered in shiitake broth with white wine and truffle butter.', img:'https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?w=400&q=80'},
-    {id:'truffle-pasta-m', name:'Truffle Pasta', price:399, time:'15 mins', veg:true, special:true, desc:'Fettuccine with aromatic black truffle cream, aged parmesan & Italian herbs.', img:'https://images.unsplash.com/photo-1621996346565-e3d5d6281292?w=400&q=80'},
+    {id:'truffle-pasta-m', name:'Truffle Pasta', price:399, time:'15 mins', veg:true, special:true, desc:'Fettuccine with aromatic black truffle cream, aged parmesan & Italian herbs.', img:'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80'},
     {id:'burrata-pizza-m', name:'Burrata & Pesto Pizza', price:499, time:'18 mins', veg:true, special:true, desc:'Wood-fired sourdough with fresh burrata, Genovese pesto & San Marzano tomatoes.', img:'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80'}
   ],
   beverages: [
